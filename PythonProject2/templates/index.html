@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Quality Disease Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Water Quality Disease Predictor</h2>
+        <form id="waterForm" onsubmit="event.preventDefault(); predictWaterQuality();">
+            <label for="pH">pH Level (0-14):</label>
+            <input type="number" id="pH" step="0.01" required>
+
+            <label for="turbidity">Turbidity (NTU):</label>
+            <input type="number" id="turbidity" step="0.01" required>
+
+            <label for="tds">Total Dissolved Solids (mg/L):</label>
+            <input type="number" id="tds" step="0.01" required>
+
+            <label for="dissolved_oxygen">Dissolved Oxygen (mg/L):</label>
+            <input type="number" id="dissolved_oxygen" step="0.01" required>
+
+            <label for="nitrate">Nitrate (mg/L):</label>
+            <input type="number" id="nitrate" step="0.01" required>
+
+            <label for="lead">Lead (mg/L):</label>
+            <input type="number" id="lead" step="0.01" required>
+
+            <label for="ecoli">E. Coli (CFU/100mL):</label>
+            <input type="number" id="ecoli" step="1" required>
+
+            <button type="submit">Predict Disease</button>
+            <a href="okok.html" class="bg-white text-gray-800 px-4 py-1 rounded-full">Home</a>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function predictWaterQuality() {
+            let waterData = {
+                pH: parseFloat(document.getElementById("pH").value),
+                Turbidity: parseFloat(document.getElementById("turbidity").value),
+                TDS: parseFloat(document.getElementById("tds").value),
+                Dissolved_Oxygen: parseFloat(document.getElementById("dissolved_oxygen").value),
+                Nitrate: parseFloat(document.getElementById("nitrate").value),
+                Lead: parseFloat(document.getElementById("lead").value),
+                E_Coli: parseFloat(document.getElementById("ecoli").value)
+            };
+
+            fetch("http://127.0.0.1:8000/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(waterData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("result").innerHTML =
+                    `<h3>Predicted Health Issue:</h3> <p>${data.predicted_dis}</p>
+                     <h3>Top Issues:</h3> <p>${JSON.stringify(data.top_issues)}</p>`;
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("result").innerHTML = "<p style='color:red;'>Error fetching prediction.</p>";
+            });
+        }
+    </script>
+
+</body>
+</html>

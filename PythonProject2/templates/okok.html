@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaterWise - Water Management Platform</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(45deg, #035bba, #035bba);
+        }
+        .hero-gradient1 {
+            background: linear-gradient(45deg, #035bba, #035bba);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropbtn {
+            background-color: white;
+
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown:hover .dropbtn {
+            background-color: #2980b9;
+        }
+        
+       
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Navigation -->
+    <nav class="hero-gradient1 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">AQUASAFE</div>
+            <div class="flex space-x-6">
+                <input type="text" placeholder="Search here..." class="px-4 py-1 rounded-full text-gray-800">
+<!--                <button class="bg-white text-gray-800 px-4 py-1 rounded-full">Menu</button>-->
+                <div class="dropdown bg-white text-gray-800 px-4 py-1 rounded-full">
+        <button class="dropbtn">Menu</button>
+        <div class="dropdown-content">
+            <a href="#">Share <br>Problem</a>
+            <a href="#">Solve the Problem</a>
+            <a href="#">Earn points</a>
+            <a href="#">Redeem <br> points</a>
+        </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="container mx-auto text-center">
+            <h1 class="text-6xl font-bold mb-6">AI-Powered Water Quality Monitoring & <br> Restoration System
+            </h1>
+            <p class="text-xl mb-8">Join us in saving water.</p>
+            <button class="bg-white text-gray-800 px-8 py-3 rounded-full font-bold" onclick="location.href='getinvolved.html'">Get Involved</button>
+            <button class="bg-white text-gray-800 px-8 py-3 rounded-full font-bold" onclick="location.href='index.html'">Smart Analyzer</button>
+
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center">Services</h2>
+            <div class="grid grid-cols  -1 md:grid-cols-3 gap-8 px-4">
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4">AI-Powered Smart Solutions</h3>
+                    <p class="mb-4">AI-driven monitoring, leak detection, and water optimization.</p>
+                    <div class="flex justify-between items-center">
+                        <!-- <span class="text-2xl font-bold">$200</span> -->
+                        <!-- <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button> -->
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4">Conservation Course</h3>
+                    <p class="mb-4">Learn advanced conservation techniques</p>
+                    <div class="flex justify-between items-center">
+                        <!-- <span class="text-2xl font-bold">$300</span> -->
+                        <!-- <button class="bg-blue-600 text-white px-4 py-2 rounded">View Course</button> -->
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                    <h3 class="text-xl font-bold mb-4">Water Analysis</h3>
+                    <p class="mb-4">Comprehensive water usage analysis</p>
+                    <div class="flex justify-between items-center">
+                        <!-- <span class="text-2xl font-bold">$150</span>
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded">Book Now</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="features" class="py-16 bg-gray-50 text-center">
+        <h2 class="text-4xl font-bold mb-6">Key Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                <h3 class="text-xl font-bold mb-4">User Roles</h3>
+                <p>Individuals, NGOs, and Government bodies collaborate.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                <h3 class="text-xl font-bold mb-4">Water Quality Reporting</h3>
+                <p>Upload images or enter pH, TDS, and turbidity levels.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                <h3 class="text-xl font-bold mb-4">Community Forum</h3>
+                <p>Discuss solutions and track restoration efforts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Upcoming Events</h2>
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-3xl font-bold mb-4">Concert for a Water-Conscious World</h3>
+                        <p class="mb-6">Join us for an evening of music and awareness about water conservation.</p>
+                        <button class="bg-blue-600 text-white px-6 py-2 rounded" onclick="location.href='register.html'">Register Now</button>
+                    </div>
+                    <div class="md:w-1/2">
+                        <!-- <img src="/api/placeholder/800/400" alt="Concert venue" class="w-full h-full object-cover"> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center">Latest Articles</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <!-- <img src="https://www.pexels.com/photo/body-of-water-under-blue-and-white-skies-1533720/" alt="Water facility" class="w-full"> -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Empower Your Organization</h3>
+                        <p class="text-gray-600">Learn about the latest water conservation strategies...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <!-- <img src="/api/placeholder/400/200" alt="Water saving" class="w-full"> -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Maximize Water Savings</h3>
+                        <p class="text-gray-600">Discover innovative ways to reduce water consumption...</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <!-- <img src="/api/placeholder/400/200" alt="Conservation" class="w-full"> -->
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-4">Revolutionize Conservation</h3>
+                        <p class="text-gray-600">Explore the future of water conservation technology...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="md:flex items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6">About AquaSafe</h2>
+                    <p class="text-gray-600 mb-6">
+                        AquaSafe is a pioneering water conservation platform dedicated to analyzing real-time water consumption patterns. We provide personalized strategies to reduce wastage and raise awareness about the importance of water conservation.
+                    </p>
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded" onclick="location.href='Learn about.html'">About us</button>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0">
+                    <!-- <img src="/api/placeholder/600/400" alt="About us" class="rounded-lg shadow-lg"> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add responsive menu toggle
+        const menuButton = document.querySelector('button');
+        menuButton.addEventListener('click', () => {
+            // Add your menu toggle logic here
+            console.log('Menu clicked');
+        });
+    </script>
+</body>
+</html>
